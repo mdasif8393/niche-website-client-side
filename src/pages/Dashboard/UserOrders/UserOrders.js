@@ -1,0 +1,42 @@
+import { WindowRounded } from '@mui/icons-material';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
+import Header from '../../Shared/Header/Header';
+import UserOrder from '../UserOrder/UserOrder';
+import './UserOrders.css'
+
+const UserOrders = () => {
+    const {user} = useAuth();
+    const [orders, setOrders] = useState([]);
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/orders/${user.email}`)
+        .then(result => {
+            setOrders(result.data)
+        })
+    },[user.email])
+
+    const cancelOrder = (id) => {
+        //delete a order
+        axios.delete(`http://localhost:5000/orders/${id}`)
+        .then(result => {
+            if(result.data){
+                alert("Your order is deleted successfully");
+                const newOrders = orders.filter(order => order._id !== id);
+                setOrders(newOrders)
+            }
+        })
+    }
+    return (
+        <div>
+            <Header></Header>
+            <div className="container user-orders-container mt-5">
+            {
+                orders.map((order) => <UserOrder key={order._id} order={order} cancelOrder={cancelOrder}></UserOrder>)
+            }
+            </div>
+        </div>
+    );
+};
+
+export default UserOrders;

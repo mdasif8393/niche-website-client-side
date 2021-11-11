@@ -26,9 +26,28 @@ const Header = () => {
         <li className="nav-item">
           <Link to="/exploreBikes" className="nav-link active" aria-current="page" >Explore Bikes</Link>
         </li>
+
+        <li className="nav-item">
+          <Link to="/userOrders" className="nav-link active" aria-current="page" >My orders</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/review" className="nav-link active" aria-current="page" >Review us</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/manageAllOrders" className="nav-link active" aria-current="page" >Manage all orders</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/addAdmin" className="nav-link active" aria-current="page" >Add admin</Link>
+        </li>
         
       </ul>
       <form className="d-flex">
+        {
+          <p>{user.displayName}</p>
+        }
         {
           user.email ? 
           <button onClick={logout} className="btn btn-outline-danger" >Logout</button> : 

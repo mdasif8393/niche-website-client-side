@@ -15,6 +15,10 @@ import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import UserOrders from './pages/Dashboard/UserOrders/UserOrders';
+import Review from './pages/Home/Review/Review';
+import AllOrders from './pages/Dashboard/AllOrders/AllOrders';
+import AddAdmin from './pages/Dashboard/AddAdmin/AddAdmin';
 const axios = require('axios').default;
 
 function App() {
@@ -32,9 +36,9 @@ function App() {
             <Home></Home>
           </Route>
 
-          <Route path="/addProduct">
+          <PrivateRoute path="/addProduct">
             <AddProduct></AddProduct>
-          </Route>
+          </PrivateRoute>
 
           <Route path="/exploreBikes">
             <ExploreBikes></ExploreBikes>
@@ -44,6 +48,10 @@ function App() {
             <PurchaseProduct></PurchaseProduct>
           </PrivateRoute>
 
+          <PrivateRoute path="/userOrders">
+            <UserOrders></UserOrders>
+          </PrivateRoute>
+
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -51,6 +59,18 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
+          
+          <Route path="/review">
+            <Review></Review>
+          </Route>
+
+          <PrivateRoute path="/manageAllOrders">
+            <AllOrders></AllOrders>
+          </PrivateRoute>
+
+          <PrivateRoute path="/addAdmin">
+            <AddAdmin></AddAdmin>
+          </PrivateRoute>
           
 
         </Switch>

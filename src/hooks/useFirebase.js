@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from '../pages/Login/Firebase/firebase.init';
 import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile} from "firebase/auth";
+import axios from "axios";
 
 initializeFirebase();
 
@@ -21,7 +22,13 @@ const useFirebase = () => {
           setAuthError('');
           const newUser = {email, displayName: name};
           setUser(newUser);
-          //save user to the database
+
+          const databaseUser ={email, displayName: name};
+
+          axios.post('http://localhost:5000/users', databaseUser)
+          .then((result) => {
+            
+          })
 
           updateProfile(auth.currentUser, {
             displayName:name
@@ -30,6 +37,8 @@ const useFirebase = () => {
           }).catch((error) => {
 
           });
+          
+
           history.replace('/');
             // ...
           })
@@ -101,6 +110,12 @@ const useFirebase = () => {
         .finally(() => setIsLoading(false));
     }
 
+    useEffect(() => {
+      axios.get(`http://localhost:5000/users/${user.email}`)
+      .then(result => {
+        console.log(result.data)
+      })
+    },[user.email])
 
 
 

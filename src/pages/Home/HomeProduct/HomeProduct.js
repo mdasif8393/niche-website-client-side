@@ -11,7 +11,7 @@ const HomeProduct = ({bike}) => {
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <h6>{engine} cc</h6>
-                <small className="card-text">{description}</small>
+                <p className="card-text"><small className="text-muted">{description}</small></p>
                 <h6>{price} taka</h6>
                 <Link to={`/purchaseProduct/${_id}`}><button className="btn btn-outline-success">Buy Now</button></Link>
             </div>
