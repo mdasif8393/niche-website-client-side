@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
-  const {user, logout} = useAuth();
+const {user, logout} = useAuth();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,28 +20,14 @@ const Header = () => {
         </li>
 
         <li className="nav-item">
-          <Link to="/addProduct" className="nav-link active" aria-current="page" >Add a product</Link>
-        </li>
-
-        <li className="nav-item">
           <Link to="/exploreBikes" className="nav-link active" aria-current="page" >Explore Bikes</Link>
         </li>
 
-        <li className="nav-item">
-          <Link to="/userOrders" className="nav-link active" aria-current="page" >My orders</Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/review" className="nav-link active" aria-current="page" >Review us</Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/manageAllOrders" className="nav-link active" aria-current="page" >Manage all orders</Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/addAdmin" className="nav-link active" aria-current="page" >Add admin</Link>
-        </li>
+        {
+          user.email && <li className="nav-item">
+                          <Link to="/dashboard" className="nav-link active" aria-current="page" >Dashboard</Link>
+                        </li>
+        }
         
       </ul>
       <form className="d-flex">

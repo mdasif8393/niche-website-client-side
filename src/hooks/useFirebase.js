@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const auth = getAuth();
 
@@ -113,7 +114,12 @@ const useFirebase = () => {
     useEffect(() => {
       axios.get(`http://localhost:5000/users/${user.email}`)
       .then(result => {
-        console.log(result.data)
+        if (result.data === 1){
+          setIsAdmin(true)
+        }
+        else{
+          setIsAdmin(false)
+        }
       })
     },[user.email])
 
@@ -128,6 +134,7 @@ const useFirebase = () => {
         signInWithGoogle,
         logout,
         authError,
+        isAdmin,
         
     }
 }

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import Header from '../../Shared/Header/Header';
 import ExploreBike from '../ExploreBike/ExploreBike'
 
 const ExploreBikes = () => {
@@ -16,7 +15,6 @@ const ExploreBikes = () => {
     },[])
     return (
         <div>
-            <Header></Header>
             <div className="container">
                 <div className="home-products-container mt-5">
                 {

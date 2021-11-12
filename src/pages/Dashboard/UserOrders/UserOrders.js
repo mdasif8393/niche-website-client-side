@@ -2,7 +2,6 @@ import { WindowRounded } from '@mui/icons-material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
-import Header from '../../Shared/Header/Header';
 import UserOrder from '../UserOrder/UserOrder';
 import './UserOrders.css'
 
@@ -29,7 +28,6 @@ const UserOrders = () => {
     }
     return (
         <div>
-            <Header></Header>
             <div className="container user-orders-container mt-5">
             {
                 orders.map((order) => <UserOrder key={order._id} order={order} cancelOrder={cancelOrder}></UserOrder>)

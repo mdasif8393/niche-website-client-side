@@ -7,7 +7,7 @@ import './HomeProducts.css'
 
 const HomeProducts = () => {
     const [allBikes, setAllBikes] = useState([]);
-    const bikes = allBikes.slice(5);
+    const bikes = allBikes.slice(0, 6);
 
     useEffect(() => {
         axios.get('http://localhost:5000/bikes')

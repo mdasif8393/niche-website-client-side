@@ -5,7 +5,6 @@ import Header from '../../Shared/Header/Header';
 const AddAdmin = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const onSubmit = data =>{
-      console.log(data.email)
       axios.put(`http://localhost:5000/users/${data.email}`)
       .then(result => {
           if(result.data.acknowledged){
@@ -19,7 +18,6 @@ const AddAdmin = () => {
     
     return (
         <div>
-            <Header></Header>
             <div className="container mt-5">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input className="form-control" style={{ width: '50%'}} placeholder="Enter email address" {...register("email")} />

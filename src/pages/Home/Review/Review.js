@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
-import Header from '../../Shared/Header/Header';
 import { useForm } from "react-hook-form";
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
@@ -30,7 +29,6 @@ const Review = () => {
     };
     return (
         <div>
-            <Header></Header>
             <div className="mt-5 container">
                 <h5>Review our service</h5>
                 <Typography component="legend"><small>Rating</small></Typography>

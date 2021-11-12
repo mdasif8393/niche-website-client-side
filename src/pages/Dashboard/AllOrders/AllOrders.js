@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Header from '../../Shared/Header/Header';
 import AllOrder from './AllOrder/AllOrder';
 import './AllOrders.css'
 
@@ -37,7 +36,6 @@ const AllOrders = () => {
     }
     return (
         <div>
-            <Header></Header>
             <div className="container text-center">
             <table className="table thead-dark table-hover">
             <thead className="thead-dark">

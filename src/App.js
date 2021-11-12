@@ -19,13 +19,18 @@ import UserOrders from './pages/Dashboard/UserOrders/UserOrders';
 import Review from './pages/Home/Review/Review';
 import AllOrders from './pages/Dashboard/AllOrders/AllOrders';
 import AddAdmin from './pages/Dashboard/AddAdmin/AddAdmin';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import AdminRoute from './pages/Login/PrivateRoute/AdminRoute';
+import Header from './pages/Shared/Header/Header'
+import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
+import Payment from './pages/Dashboard/Payment/Payment';
 const axios = require('axios').default;
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-
+        <Header></Header>
         <Switch>
 
           <Route path="/home">
@@ -35,10 +40,6 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-
-          <PrivateRoute path="/addProduct">
-            <AddProduct></AddProduct>
-          </PrivateRoute>
 
           <Route path="/exploreBikes">
             <ExploreBikes></ExploreBikes>
@@ -59,19 +60,37 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          
+
           <Route path="/review">
             <Review></Review>
           </Route>
 
-          <PrivateRoute path="/manageAllOrders">
-            <AllOrders></AllOrders>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
 
-          <PrivateRoute path="/addAdmin">
-            <AddAdmin></AddAdmin>
+          <PrivateRoute path="/payment">
+            <Payment></Payment>
           </PrivateRoute>
-          
+
+          <AdminRoute path="/manageAllOrders">
+            <AllOrders></AllOrders>
+          </AdminRoute>
+
+          <AdminRoute path="/addAdmin">
+            <AddAdmin></AddAdmin>
+          </AdminRoute>
+
+          <AdminRoute path="/addProduct">
+            <AddProduct></AddProduct>
+          </AdminRoute>
+
+          <AdminRoute path="/manageProducts">
+            <ManageProducts></ManageProducts>
+          </AdminRoute>
+
+
+
 
         </Switch>
 

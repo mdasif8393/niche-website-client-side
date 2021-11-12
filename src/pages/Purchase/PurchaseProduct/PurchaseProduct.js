@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import Header from '../../Shared/Header/Header';
 import './PurchaseProduct.css'
 import { useForm } from "react-hook-form";
 import TextField from '@mui/material/TextField';
@@ -42,7 +41,6 @@ const PurchaseProduct = () => {
     return (
         
         <div>
-            <Header></Header>
             <div className="purchase-product-container container mt-5">
                 
             <div>
