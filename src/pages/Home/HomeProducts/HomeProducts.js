@@ -18,10 +18,11 @@ const HomeProducts = () => {
     },[])
     
     return (
-        <div className="home-products-container mt-5">
+        <div className="home-products-container row" style={{marginTop: '50px'}}>
+            <h3 style={{color:'rgb(255, 67, 59)', fontWeight: 'bold'}} className="text-center">Bikes</h3>
             {
                     bikes.map(bike=> <HomeProduct key={bike._id} bike={bike}></HomeProduct>)
-                }
+            }
 
         </div>
                 

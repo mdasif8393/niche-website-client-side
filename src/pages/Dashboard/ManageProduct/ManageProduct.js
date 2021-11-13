@@ -21,7 +21,7 @@ const ManageProduct = ({bike, deleteBike}) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <h6 className="card-text">{price} taka</h6>
-                    <button onClick={()=> handleDeleteBike(_id)}  className="btn btn-outline-danger" >Delete</button>
+                    <button onClick={()=> handleDeleteBike(_id)}  className="btn btn-outline-danger" ><i class="fas fa-trash-alt"></i> Delete</button>
                 </div>
                 </div>
             </div>

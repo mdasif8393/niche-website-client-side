@@ -11,9 +11,9 @@ const ShowReviews = () => {
         })
     },[])
     return (
-        <div>
-            <h5 className="text-center">Reviews</h5>
-            <div className="container show-reviews-container">
+        <div className="mt-5">
+            <h5 style={{color: 'rgb(255, 67, 59)', fontWeight:'bold',}} className="text-center">Users Reviews</h5>
+            <div className="container show-reviews-container row">
             {
                 reviews.map((r) =><ShowReview key={r._id} r={r}></ShowReview>)
             }

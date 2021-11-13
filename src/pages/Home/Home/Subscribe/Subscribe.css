@@ -14,12 +14,15 @@ background-image: url("https://www.qicuae.com/wp-content/uploads/2015/12/motorcy
 .subscribe-button{
     height: 70px;
     border: none;
-    background-color: rgb(19, 163, 115);
+    background-color: rgb(255, 67, 59);
     width: 100px;
     border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .subscribe-text-color{
-    color: rgb(106, 150, 80);
+    color: rgb(255, 124, 119);
     font-weight: 700;
 }

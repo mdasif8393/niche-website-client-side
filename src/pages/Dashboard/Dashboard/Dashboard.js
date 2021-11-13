@@ -38,41 +38,41 @@ function Dashboard(props) {
       <Divider />
       
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-        <li className="nav-item">
-          <Link to="/" className="nav-link active" aria-current="page" >Home</Link>
+        <li className="nav-item header-link-hover" >
+          <Link style={{textDecoration:'none'}} to="/" className="nav-link active" aria-current="page" >Home</Link>
         </li>
         
         {
             isAdmin ? 
             <div>
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/manageAllOrders" className="nav-link active" aria-current="page" >Manage all orders</Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/addAdmin" className="nav-link active" aria-current="page" >Add admin</Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/addProduct" className="nav-link active" aria-current="page" >Add a product</Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/manageProducts" className="nav-link active" aria-current="page" >Manage Products</Link>
                 </li>   
             </div>
             :
             <div>
 
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/userOrders" className="nav-link active" aria-current="page" >My orders</Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/review" className="nav-link active" aria-current="page" >Review</Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item header-link-hover">
                     <Link to="/payment" className="nav-link active" aria-current="page" >Payment</Link>
                 </li>
             </div>

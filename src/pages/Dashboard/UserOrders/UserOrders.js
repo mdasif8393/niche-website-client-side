@@ -27,8 +27,8 @@ const UserOrders = () => {
         })
     }
     return (
-        <div>
-            <div className="container user-orders-container mt-5">
+        <div className="container mt-5" >
+            <div className=" row">
             {
                 orders.map((order) => <UserOrder key={order._id} order={order} cancelOrder={cancelOrder}></UserOrder>)
             }

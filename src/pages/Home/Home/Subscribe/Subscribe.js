@@ -6,7 +6,7 @@ const Subscribe = () => {
         alert('Thank you for your Subscription! We will send our exciting offer to your Email')
     }
     return (
-        <div className="hero-image container-fluid d-flex justify-content-center align-items-center">
+        <div className="hero-image container-fluid d-flex justify-content-center align-items-center mt-5">
             <div>
                 <h2 className="text-center subscribe-text-color">SUBSCRIBE OUR NEWSLETTER</h2>
                 <h4 className="text-center subscribe-text-color mt-4">SUBSCRIBE TO RECEIVE OUR INTERESTING OFFERS</h4>

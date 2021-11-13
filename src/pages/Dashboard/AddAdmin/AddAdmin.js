@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import Header from '../../Shared/Header/Header';
+import './AddAdmin.css'
 const AddAdmin = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const onSubmit = data =>{
@@ -17,12 +18,13 @@ const AddAdmin = () => {
 
     
     return (
-        <div>
-            <div className="container mt-5">
+        <div className="add-admin-box d-flex justify-content-center align-items-center  add-admin-box container mt-5">
+            <div>
+            <h5 style={{color:'rgb(255, 67, 59)'}}>Enter email to make a admin</h5>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className="form-control" style={{ width: '50%'}} placeholder="Enter email address" {...register("email")} />
+                <input className="form-control d-inline" style={{ width: '72%'}} placeholder="Enter email address" {...register("email")} />
 
-                <input className="btn btn-success" type="submit" />
+                <input className="btn btn-success make-admin-button" type="submit" />
             </form>
             </div>
         </div>

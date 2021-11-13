@@ -10,8 +10,8 @@ const UserOrder = ({order, cancelOrder}) => {
         }
     }
     return (
-        <div>
-            <div className="card mb-3" style={{width: '580px',}}>
+            <div  className="col-md-5 col-sm-12 me-5">
+                <div className="card mb-3 " style={{width: '580px',}}>
             <div className="row g-0">
                 <div className="col-md-4">
                 <img src={bikeImage} style={{height: '150px', width: '250px'}} className="img-fluid rounded-start" alt="..."/>
@@ -21,12 +21,12 @@ const UserOrder = ({order, cancelOrder}) => {
                     <h5 className="card-title">{bikeName}</h5>
                     <p className="card-text">{bikePrice} taka</p>
                     <p>Order Status: {orderStatus}</p>
-                    <button onClick={()=>handleCancelOrder(_id)} className="btn btn-outline-danger">Cancel Order</button>
+                    <button onClick={()=>handleCancelOrder(_id)} className="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Cancel Order</button>
                 </div>
                 </div>
             </div>
             </div>
-        </div>
+            </div>
     );
 };
 
