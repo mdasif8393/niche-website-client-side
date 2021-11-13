@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './PurchaseProduct.css'
 import { useForm } from "react-hook-form";
 import TextField from '@mui/material/TextField';
 
 const PurchaseProduct = () => {
+    const history = useHistory();
     const {id} = useParams();
 
     const [bike, setBike] = useState({});
@@ -26,7 +27,9 @@ const PurchaseProduct = () => {
         .then(result => {
             if(result.data.acknowledged){
                 alert("Order is placed successfully");
+                history.push('/userOrders')
                 reset();
+                
             }
         })
     };

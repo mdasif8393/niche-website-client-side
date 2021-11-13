@@ -1,4 +1,4 @@
-#### Please reload tw0 or three times the webpage if data are not shown properly. it's heroku problem
+### Note: Bikes collection and reviews in home page are not shown at first because of heroku problem. Please reload two or three times the webpage if data are not shown properly. it's heroku problem
 # Website Name: Fancy Bikes
 #### It's a travel agency website
 
