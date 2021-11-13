@@ -9,14 +9,14 @@ const ManageProducts = () => {
     const [bikes, setBikes] = useState([]);
     const {isLoading} = useAuth();
     useEffect(() => {
-        axios.get('http://localhost:5000/bikes')
+        axios.get('https://vast-stream-59813.herokuapp.com/bikes')
         .then(result => {
             setBikes(result.data);
         })
     },[])
 
     const deleteBike = (id) =>{
-        axios.delete(`http://localhost:5000/bikes/${id}`)
+        axios.delete(`https://vast-stream-59813.herokuapp.com/bikes/${id}`)
         .then(result => {
             if(result.data.acknowledged){
                 const newBikes = bikes.filter(bike => bike._id !== id);

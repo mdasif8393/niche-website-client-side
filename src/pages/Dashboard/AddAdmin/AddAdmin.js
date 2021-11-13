@@ -6,7 +6,7 @@ import './AddAdmin.css'
 const AddAdmin = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const onSubmit = data =>{
-      axios.put(`http://localhost:5000/users/${data.email}`)
+      axios.put(`https://vast-stream-59813.herokuapp.com/users/${data.email}`)
       .then(result => {
           if(result.data.acknowledged){
             alert("a admin is successfully added");

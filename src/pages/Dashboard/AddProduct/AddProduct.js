@@ -10,7 +10,7 @@ const AddProduct = () => {
 
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/bikes', data)
+        axios.post('https://vast-stream-59813.herokuapp.com/bikes', data)
         .then(result => {
             if(result.data.acknowledged){
                 alert("Data inserted successfully");

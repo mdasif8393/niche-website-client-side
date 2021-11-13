@@ -10,7 +10,7 @@ const HomeProducts = () => {
     const bikes = allBikes.slice(0, 6);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/bikes')
+        axios.get('https://vast-stream-59813.herokuapp.com/bikes')
         .then( result => {
             setAllBikes(result.data);
             

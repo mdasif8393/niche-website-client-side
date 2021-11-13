@@ -9,7 +9,7 @@ const UserOrders = () => {
     const {user} = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(()=>{
-        axios.get(`http://localhost:5000/orders/${user.email}`)
+        axios.get(`https://vast-stream-59813.herokuapp.com/orders/${user.email}`)
         .then(result => {
             setOrders(result.data)
         })
@@ -17,7 +17,7 @@ const UserOrders = () => {
 
     const cancelOrder = (id) => {
         //delete a order
-        axios.delete(`http://localhost:5000/orders/${id}`)
+        axios.delete(`https://vast-stream-59813.herokuapp.com/orders/${id}`)
         .then(result => {
             if(result.data){
                 alert("Your order is deleted successfully");

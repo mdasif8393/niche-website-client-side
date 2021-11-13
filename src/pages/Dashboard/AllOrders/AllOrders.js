@@ -6,7 +6,7 @@ import './AllOrders.css'
 const AllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(()=> {
-        axios.get('http://localhost:5000/orders')
+        axios.get('https://vast-stream-59813.herokuapp.com/orders')
         .then(result => {
             setOrders(result.data)
         })
@@ -14,7 +14,7 @@ const AllOrders = () => {
 
     //update order status by admin
     const updateStatus = (id) => {
-        axios.put(`http://localhost:5000/orders/${id}`)
+        axios.put(`https://vast-stream-59813.herokuapp.com/orders/${id}`)
         .then(result => {
             if(result.data.acknowledged){
                 alert("update status successfully")
@@ -25,7 +25,7 @@ const AllOrders = () => {
 
     //deleted a order by admin
     const deleteOrder = (id) => {
-        axios.delete(`http://localhost:5000/orders/${id}`)
+        axios.delete(`https://vast-stream-59813.herokuapp.com/orders/${id}`)
         .then(result => {
             if(result.data.acknowledged){
                 const newOrders = orders.filter(order => order._id !== id);

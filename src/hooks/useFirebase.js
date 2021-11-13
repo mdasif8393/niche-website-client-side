@@ -26,7 +26,7 @@ const useFirebase = () => {
 
           const databaseUser ={email, displayName: name};
 
-          axios.post('http://localhost:5000/users', databaseUser)
+          axios.post('https://vast-stream-59813.herokuapp.com/users', databaseUser)
           .then((result) => {
             
           })
@@ -112,7 +112,7 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-      axios.get(`http://localhost:5000/users/${user.email}`)
+      axios.get(`https://vast-stream-59813.herokuapp.com/users/${user.email}`)
       .then(result => {
         if (result.data === 1){
           setIsAdmin(true)

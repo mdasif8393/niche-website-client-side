@@ -5,7 +5,7 @@ import './ShowReviews.css'
 const ShowReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() =>{
-        axios.get('http://localhost:5000/review')
+        axios.get('https://vast-stream-59813.herokuapp.com/review')
         .then(result => {
             setReviews(result.data);
         })

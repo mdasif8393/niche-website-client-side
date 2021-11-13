@@ -22,7 +22,7 @@ const PurchaseProduct = () => {
         data.bikeImage = bike.image;
         data.orderStatus = 'pending';
         
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://vast-stream-59813.herokuapp.com/orders', data)
         .then(result => {
             if(result.data.acknowledged){
                 alert("Order is placed successfully");
@@ -32,7 +32,7 @@ const PurchaseProduct = () => {
     };
 
     useEffect(() =>{
-        axios.get(`http://localhost:5000/bikes/${id}`)
+        axios.get(`https://vast-stream-59813.herokuapp.com/bikes/${id}`)
         .then(result => {
             setBike(result.data);
         })
