@@ -1,6 +1,5 @@
-### Note: Bikes collection and reviews in home page are not shown at first because of heroku problem. Please reload two or three times the webpage if data are not shown properly. it's heroku problem
 # Website Name: Fancy Bikes
-#### It's a travel agency website
+#### Full Stack Bike Selling Website
 
 ## Website Link: https://fancy-bikes.web.app/
 
@@ -12,20 +11,19 @@
 * User can delete his order from my order page
 * Admin can add a bike which will show in home page and explore bikes page
 * Admin can make a user admin
-* Admin can delete all users order and make their order shipped
+* Admin can delete all users order and make their order shipped from pending
 * Admin can delete a product
 
 ### Tools
 * React
 * MongoDB
 * Express
-* Node
-* HTML
 * CSS
 * Bootstrap
 * Axios
 * React Hook Form
 * Dot Env
-* Firebase
+* Firebase Authentication
+* Font Awesome
 
 ## Heroku server link: https://vast-stream-59813.herokuapp.com/
